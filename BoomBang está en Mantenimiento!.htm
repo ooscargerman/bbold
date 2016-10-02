@@ -1,0 +1,205 @@
+<!doctype html public "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+
+	
+	
+	<script type="text/javascript" src="http://es.boombang.be/common.js"></script>
+	<script type="text/javascript">
+	
+		var reload_seconds = 10;
+		var current_seconds = reload_seconds;
+		var loop = null;
+		var preloaded_digits = new Array();
+		
+		function refresh_clock()
+		{
+			var clock = document.getElementById('clock');
+			if (current_seconds < 1)
+			{
+				clearInterval(loop);
+document.location.reload()
+
+			}
+			var clock_content = secs_to_time(current_seconds);
+			clock.innerHTML = clock_content;
+			current_seconds--;
+		}
+		
+		function start_clock()
+		{
+			refresh_clock();
+			loop = setInterval(refresh_clock, 1000);
+		}
+		
+		addEvent(window, 'load', start_clock);
+		
+		function secs_to_time(secs)
+		{
+			var seconds = secs % 60;
+			secs -= seconds;
+			var minutes = (secs % (60 * 60)) / 60;
+			secs -= (minutes * 60);
+			var hours = secs / (60 * 60);
+			var sep = ':';
+			if (seconds < 10)
+			{
+				seconds = '0' + seconds;
+			}
+			if (minutes < 10)
+			{
+				minutes = '0' + minutes;
+			}
+			return (hours + sep + minutes+ sep +seconds);
+		}
+		
+		function time_to_img(time)
+		{
+			var result = document.createElement('div');
+			for (i in time)
+			{
+				var img = new Image();
+				if (time[i] == ':')
+				{
+					img.src = '../../../images/mant_clock_sep.gif';
+				}
+				else
+				{
+					img.src = '../../../images/mant_clock_' + time[i] + '.png';
+				}
+				result.appendChild(img);
+			}
+			return result;
+		}
+		
+	</script>
+	<style type="text/css">
+	
+		BODY
+		{
+			background: #05556d url('http://i.imgur.com/VC8EXal.jpg') top left no-repeat;
+		}
+	
+		H1#title
+		{
+			display: block;
+			position: absolute;
+			left: 20px;
+			top: 280px;
+			width: 350px;
+			height: 20px;
+			margin: 0px;
+			padding: 0px;
+			color: white;
+			font-family: sans-serif;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		
+		DIV#explanation
+		{
+			position: absolute;
+			left: 20px;
+			top: 310px;
+			width: 350px;
+			height: 120px;
+			margin: 0px;
+			padding: 0px;
+			color: white;
+			font-family: sans-serif;
+			font-size: 14px;
+			overflow: auto;
+		}
+	
+		DIV#clock_label
+		{
+			margin: 0px;
+			padding: 0px;
+			position: absolute;
+			left: 20px;
+			top: 430px;
+			height: 16px;
+			line-height: 16px;
+			padding-left: 20px;
+			font-family: sans-serif;
+			font-size: 10px;
+			font-weight: bold;
+			color: #02d1e1;
+			background: #095169 url('http://i.imgur.com/2Rwaszd.png') top left no-repeat;
+		}
+	
+		DIV#clock
+		{
+			display: block;
+			position: absolute;
+			left: 20px;
+			top: 450px;
+			height: 40px;
+			margin: 0px;
+			padding: 0px;
+			color: #02d1e1;
+			font-family: monospace;
+			font-size: 40px;
+		}
+		
+		DIV#clock IMG
+		{
+			margin-right: 3px;
+		}
+	
+		
+		
+		A#retrybtn:active
+		{
+			margin-left: 2px;
+			margin-top: 2px;
+		}
+	
+	</style>
+
+
+
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  min-width:800px !important;
+}
+</style>
+
+
+	<h1 id="title">BoomBang está en Mantenimiento!</h1>
+	<div id="explanation"><p>Estamos trabajando para que puedas volver a jugar lo antes posible.</p><p>No cierres esta ventana, intentaremos reconectarte automáticamente.</p></div>
+	<div id="clock_label">Próximo intento de reconexión en</div>
+	<div id="clock">0:00:00</div>
+	
+	
+
+	
+	
+		<div class="ads2" style="bottom: 0px; background-image:url('http://i.imgur.com/tMKWSmW.png');padding-top:36px;padding-left:6px;margin-left:13%;height:100px;width:740px; background-repeat: 10; z-index: 7000; width: 734px; position: fixed; height:100px; left: 50%; margin-left:-370px; margin-right:auto; overflow: hidden;">
+	<span onmouseenter="myEnterFunction()" id="Cerrar" onclick="$('.ads2').slideUp('slow')" title="Cerrar publicidad por 2 minutos" style="transition: all 1s linear; z-index: 9999; position: absolute;top: 40px; left: 30px; border-radius: 15px; padding: 2px 4px; font-size: 10pt; color: red; background: white; box-shadow: 0 0 10px white; cursor: pointer;">X</span>
+
+			<script>
+                        var _0x1060=["\x6C\x6F\x67","\x72\x61\x6E\x64\x6F\x6D","\x66\x6C\x6F\x6F\x72","\x6D\x61\x72\x67\x69\x6E\x4C\x65\x66\x74","\x73\x74\x79\x6C\x65","\x43\x65\x72\x72\x61\x72","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x70\x78"];var i=0;function myEnterFunction(){console[_0x1060[0]](i);if(i++ < 20){var _0xd578x3=Math[_0x1060[2]]((Math[_0x1060[1]]()* 300)+ 300);document[_0x1060[6]](_0x1060[5])[_0x1060[4]][_0x1060[3]]= _0xd578x3+ _0x1060[7]}}
+                        </script>
+
+			<center style="margin-top: -26px;">
+			 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BB -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5545115916410734"
+     data-ad-slot="7702121201"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></center>
+
+
+
+
+
+l
+</div></!doctype>
